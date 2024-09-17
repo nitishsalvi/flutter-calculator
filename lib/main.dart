@@ -141,11 +141,13 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         onPressed: () {
           if (value == '=') {
             _calculateResult();
+          } else if (value == 'x^2') {
+            _addToExpression('^2');
           } else {
             _addToExpression(value);
           }
         },
-        child: Text(value),
+        child: value == 'x^2' ? Icon(Icons.square_foot) : Text(value),
       ),
     );
   }
